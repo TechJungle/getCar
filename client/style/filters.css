@@ -1,7 +1,7 @@
 .filters {
   	position: absolute;
   	left: 0;
-  	background: #f2f2f2;
+  	background:white;
   	width: 180px;
   	padding: 15px;
     height: 100%;
@@ -17,4 +17,51 @@
 .img {
 	height: 100px; 
 	width: 150px;
+	
+}
+
+#search {
+	
+	height: 30px;
+	width: 130px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+#search:focus {
+	width: 220%;
+}
+.subfilter{
+	margin-left:25px;
+	position: absolute;
+	left: 0;
+	background: white;
+	width: 200px;
+	padding: 15px;
+	height: 100%;
+	border-radius: 20px
+}
+.type{
+	background: #7679A1;
+	border-radius:5px; 
+	color:white;
+	height:300px;
+	width:180px
+}
+.price{
+	background: #B080B9;
+	border-radius:5px;
+	color:white;
+	height:300px;
+	width:180px
+	
+}
+.color{
+	background: #B85B7A;
+	border-radius:5px;
+	color:white;
+	height:300px;
+	width:180px
+	
 }
