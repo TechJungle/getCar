@@ -17,17 +17,18 @@ var Schema = mongoose.Schema;
 var carSchema  = new Schema({
     username: String,
     phone: Number,
-	  image: String,
+    image: String,
     type : {type: String, uppercase: true},
     color: {type: String, uppercase: true},
     price: Number,
     operation:String,
     status:String,
-    pickPlace:String,
+    pickupPlace:String,
     returnPlace:String,
-    rentPeriod:Number,
-    rentPrice:Number
+    rentingPeriod:Number,
+    rentingPrice:Number
 });
+
 var carModel = mongoose.model('carModel',carSchema);
 
 mongoose.connect(mongoURI,{useMongoClient: true});
