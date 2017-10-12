@@ -1,6 +1,42 @@
+<html>
+<style>
+.centered {
+  position: absolute;
+  top: 5%;
+  left:70%;
+  /*bottom: 20%*/
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  font-size: 40px;
+  color: #ff0000 ;
+  font-style: italic;
+  -ms-transform: rotate(40deg); /* IE 9 */
+  -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+  transform: rotate(40deg);
+}
+</style>
 <div class = "show" class="container">
-  <img ng-src="{{$ctrl.car.image}}" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#{{$ctrl.car._id}}" style="width: 350px; height: 200px; background-color: white;">
+
+<div>
+
+  <img ng-src="{{$ctrl.car.image}}" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#{{$ctrl.car._id}}" style="width: 350px; height: 200px; background-color: white;box-shadow: 0 0 25px black;border-style: ridge;border-width: 5px;border-color: #9999ff;; background-color: white;">
+  <div class="centered">{{$ctrl.car.option}}</div>
+  <br>
+  <center><button style="color: red" type="button" class="btn btn-default btn-sm" ng-click="deleteCar($ctrl.car._id)"><span class="glyphicon glyphicon-remove"></span>Remove Ads.</button></center>
+  <br>
+  <br>
+    <input type="text" name="username" class="form-control" id="pwd" ng-model="username" placeholder="username">
+    <br>
+    <input type="text" name="comment" class="form-control" id="pwd" ng-model="comment" placeholder="comment ..">
+    <br>
+  <button class="btn btn-success btn-sm" ng-click="addCommentbtn($ctrl.car._id)">Add</button>
+
+
+  </div>
+
+
   <br/>
+  
 
   <div class="modal fade" id={{$ctrl.car._id}} role="dialog">
     <div class="modal-dialog">
@@ -13,21 +49,34 @@
            <img ng-src = {{$ctrl.car.image}} style="max-width: 100%;"></img></h4>
          </div>
          <div class="modal-body">
-          <p>{{$ctrl.car.type}}
+          <dt>name: {{$ctrl.car.type}}</dt>
            <br/>
-           color: {{$ctrl.car.color}} 
+          <dt> color: {{$ctrl.car.color}}</dt> 
            <br/>
-           price: {{$ctrl.car.price}}
+          <dt> price: {{$ctrl.car.price}}</dt>
            <br/>
-           Contact: <br/>
-           Name: {{$ctrl.car.username}}
+           <dt>Name: {{$ctrl.car.username}}</dt>
            <br/>
-           Number Phone: {{$ctrl.car.phone}}
+<!-- 
+           option: {{$ctrl.car.SaleOrRent}} -->
+        
+
+           <dt>Phone Number: {{$ctrl.car.phone}}</dt>
+           <br>
+           <br>
+           <div class="panel panel-default" >
+            <div class="panel-heading">User Comments</div>
+              <div class="panel-body" ng-repeat="comment in $ctrl.car.comment">{{comment.username}}:  {{comment.newComment}}</div>
+              <div class="panel-body"></div>
+           
+            <!-- </div> -->
+           </div>
+
          </p>
 
        </div>
        <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
